@@ -80,33 +80,65 @@ In the model view:
 @endforeach
 ```
 
-## Create new row templates
 
-Make a class and a folder for the views:
+## Edit default config and templates
+
+
+Run:
 
 ```sh
-cd vendor/novius/laravel-backpack-visualcomposer
-class=MyNewRowTemplate
-touch src/app/Templates/$class.php
-mkdir src/resources/views/vendor/visualcomposer/$class
-touch src/resources/views/vendor/visualcomposer/$class/crud.blade.php
-touch src/resources/views/vendor/visualcomposer/$class/front.blade.php
+php artisan vendor:publish --provider="Novius\Backpack\VisualComposer\VisualComposerServiceProvider"
 ```
 
-In `MyNewRowTemplate.php`:
+...it will output the list of copied files than can now be overwritten, including the config, the backpack field type, the language files and 11 built-in templates:
+
+- *Article*, an wysiwyg and inputs for the title, subtitle, date, author, CTA button and user-customizable colors
+- *BackgroundImageAndText*, an uploadable picture with a caption and wysiwyg description
+- *ImageInBase64*, a picture stored as base64 instead of file upload
+- *ImageInContainer*, an uploadable picture, and that’s it
+- *LeftImageRightText*, a picture and some text fields on two columns
+- *LeftTextRightImage*, some text fields and a picture on two columns
+- *LeftTextRightQuote*, some text fields and customizable background color, on two columns
+- *Minimal*, an empty template with the minimum code for it to work
+- *Slideshow*, a slider of unlimited pictures and their captions
+- *ThreecolumnsImageTextCta*, three columns with a picture, a title, a wysiwyg and a CTA button on each of them
+- *TwoColumnsImageTextCta*, the same as above, but on two columns instead of three
+
+Check out how they are made, so you can customize them and build your own.
+
+
+## Steps to create a new Template
+
+- Create a class for your template.  This needs to extend `Novius\Backpack\VisualComposer\Templates\RowTemplateAbstract`
+
+eg.
 
 ```php
 <?php
 
-namespace Novius\Backpack\VisualComposer\Templates;
+namespace App\Templates;
+
+use Novius\Backpack\VisualComposer\Templates\RowTemplateAbstract;
 
 class MyNewRowTemplate extends RowTemplateAbstract
 {
-    static public $name = 'my-new-row-template';
+    public static $name = 'my-new-row-template';
 }
 ```
 
-In `crud.blade.php`:
+- Add the template classname to `project/config/visualcomposer.php` templates array
+```
+    // Installed and available templates to show in crud
+    'templates' => [
+        ...
+        \App\Templates\MyNewRowTemplate::class,
+        ...
+    ],
+```
+
+- In `project/resources/views/vendor/visualcomposer/templates` there is a folder for each template.  Create a folder with the classname eg. MyNewRowTemplate.  The folder needs a crud.blade.php (for admin) and a front.blade.php (for frontend).  See the other templates for examples.
+
+eg In `crud.blade.php`:
 
 ```php
 <div class="row-template vc-my-new-row-template">
@@ -158,8 +190,9 @@ In `crud.blade.php`:
 @endpush
 ```
 
-In `resources/lang/vendor/visualcomposer/en/templates.php`, add:
 
+- In `project/resources/lang/vendor/visualcomposer/en/templates.php` add an array element which defines what the template will appear as in the admin dropdown list, as well as terms within crud.blade.php
+eg.
 ```php
 <?php
 ...
@@ -171,27 +204,3 @@ In `resources/lang/vendor/visualcomposer/en/templates.php`, add:
     ],
 ```
 
-## Edit default config and templates
-
-
-Run:
-
-```sh
-php artisan vendor:publish --provider="Novius\Backpack\VisualComposer\VisualComposerServiceProvider"
-```
-
-...it will output the list of copied files than can now be overwritten, including the config, the backpack field type, the language files and 11 built-in templates:
-
-- *Article*, an wysiwyg and inputs for the title, subtitle, date, author, CTA button and user-customizable colors
-- *BackgroundImageAndText*, an uploadable picture with a caption and wysiwyg description
-- *ImageInBase64*, a picture stored as base64 instead of file upload
-- *ImageInContainer*, an uploadable picture, and that’s it
-- *LeftImageRightText*, a picture and some text fields on two columns
-- *LeftTextRightImage*, some text fields and a picture on two columns
-- *LeftTextRightQuote*, some text fields and customizable background color, on two columns
-- *Minimal*, an empty template with the minimum code for it to work
-- *Slideshow*, a slider of unlimited pictures and their captions
-- *ThreecolumnsImageTextCta*, three columns with a picture, a title, a wysiwyg and a CTA button on each of them
-- *TwoColumnsImageTextCta*, the same as above, but on two columns instead of three
-
-Check out how they are made, so you can customize them and build your own.
