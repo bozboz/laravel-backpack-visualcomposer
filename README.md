@@ -8,7 +8,17 @@ Improve the way you edit pages.
 ## Installation
 
 ```sh
-composer require novius/laravel-backpack-visualcomposer
+composer require bozboz/laravel-backpack-visualcomposer
+```
+
+Ensure the following is added to your composer.json
+```json
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://laravel-packages.staging.bozboz.co.uk"
+        }
+    ]
 ```
 
 Then add this to `config/app.php`:
