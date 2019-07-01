@@ -25,7 +25,7 @@ class FileUploadController extends Controller
         }
 
         $file = $request->file('file');
-        $filename = $file->storePublicly('public');
+        $filename = $file->storeAs('public/', $file->getClientOriginalName() );
         $url = Storage::url($filename);
 
         return response()->json([
