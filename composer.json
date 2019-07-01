@@ -7,6 +7,7 @@
         "Backpack",
         "CRUD"
     ],
+    "version": "v1.0.0",
     "type": "library",
     "license": "AGPL-3.0",
     "authors": [
