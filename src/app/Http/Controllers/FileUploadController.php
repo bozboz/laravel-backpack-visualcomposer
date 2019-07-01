@@ -25,7 +25,11 @@ class FileUploadController extends Controller
         }
 
         $file = $request->file('file');
-        $filename = $file->storeAs('public/', $file->getClientOriginalName() );
+
+        $path_parts = pathinfo($file->getClientOriginalName());
+        $filename = $path_parts['filename'] . ' - ' . time() . '.' . $path_parts['extension'];
+        $filename = $file->storeAs('public/', $filename );
+        
         $url = Storage::url($filename);
 
         return response()->json([
