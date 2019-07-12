@@ -7,7 +7,7 @@
         $text_color,
     ) = json_decode($content)
 @endphp
-<div class="vc vc-left-image-right-text" style="background:{{ $bg_color_container }}; color:{{ $text_color }}">
+<div class="vc vc-left-imageset-right-text" style="background:{{ $bg_color_container }}; color:{{ $text_color }}">
     <div class="container">
         <div class="row">
             <div class="col-md-6 breakout-imageset--left">
