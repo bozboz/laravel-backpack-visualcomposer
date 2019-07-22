@@ -1,6 +1,8 @@
 @php
 $columns = range(0, 1);
 $fields = json_decode($content);
+
+
 foreach ($columns as $i) {
     foreach ([
         "c{$i}_image_url",
@@ -13,13 +15,16 @@ foreach ($columns as $i) {
     }
 }
 @endphp
+
 <div class="vc vc-two-columns-image-text-cta">
     <div class="container">
         <div class="row">
             @foreach($columns as $i)
                 <div class="col-md-6">
+                    @if(!empty(${"c{$i}_image_url"}))
                     <img src="{{ ${"c{$i}_image_url"} }}"
                          alt="{{ ${"c{$i}_title"} }}">
+                    @endif
                     <h2>
                         {{ ${"c{$i}_title"} }}
                     </h2>
