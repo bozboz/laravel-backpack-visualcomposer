@@ -19,7 +19,7 @@
     ],
     "require": {
         "php": ">=7.1",
-        "backpack/crud": "~3"
+        "backpack/crud": "~3|~4"
     },
     "autoload": {
         "psr-4": {
