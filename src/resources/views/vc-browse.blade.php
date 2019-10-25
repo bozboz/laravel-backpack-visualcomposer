@@ -62,7 +62,11 @@
 
 		// function to update the file selected by elfinder
 		function processSelectedFile(filePath, requestingField) {
-		    $('#' + requestingField).val(filePath.replace(/\\/g,"/"));
+			filePath = filePath.replace(/\\/g,"/");
+			if (filePath.charAt(0) !== '/') {
+				filePath = '/' + filePath;
+			}
+		    $('#' + requestingField).val(filePath);
 		    $('#' + requestingField).trigger('change');
 		}
 
