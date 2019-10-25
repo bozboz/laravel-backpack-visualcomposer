@@ -9,10 +9,11 @@
     </div>
 
     <div class="float-right">
-        <input class="right_image_url" type="hidden" rel="right_image">
+        <!--<input class="right_image_url" type="hidden" rel="right_image">-->
         <div class="right_image">
-            <img src>
-            <input type="file">
+            <img class="preview" src>
+            @include('visualcomposer::vc-browse', ['field'=>['name' => 'right_image_url']])
+            <!--<input type="file">-->
         </div>
     </div>
 
@@ -63,41 +64,25 @@
                 on: {change: update}
             });
 
+            let $preview = $('img.preview', $row);
+            let $file = $('.right_image_url', $row);
+
             // Setup picture uploader
-            $('.right_image_url', $row).each(function () {
-                var $field = $(this),
-                    $uploader = $('.'+$field.attr('rel'), $row),
-                    $preview = $('img', $uploader),
-                    $file = $('[type="file"]', $uploader);
-                $preview.attr('src', $field.val());
-                $file.change(function (e) {
-                    e.preventDefault();
-                    files = e.target.files;
-                    if (!files.length) return;
-                    var data = new FormData();
-                    data.append('file', files[0]);
-                    $.ajax({
-                        url: @json(route('visualcomposer.fileupload')),
-                        type: 'POST',
-                        data: data,
-                        cache: false,
-                        dataType: 'json',
-                        processData: false,
-                        contentType: false,
-                        success: function(data) {
-                            if(data.error !== false) {
-                                return alert('Upload error');
-                            }
-                            $preview.attr('src', data.url);
-                            $field.val(data.url);
-                            update();
-                        },
-                        error: function() {
-                            alert('Connection error');
-                        }
-                    });
-                });
+            let updatePreview = function(){
+                let src = $file.val();
+
+                if(src.charAt(0) !== '/') 
+                    src = '/'+src;
+
+                $preview.attr('src', src);
+            };
+
+            $file.on('change', function(){
+                updatePreview();
+                update();
             });
+
+            updatePreview();
 
             // Update hidden field on change
             $row.on(
@@ -130,14 +115,14 @@
             width: 49%;
             float: left;
         }
-        .vc-left-text-right-image img {
+        .vc-left-text-right-image img.preview {
             width: 100%;
             height: 450px;
             object-fit: contain;
             margin: auto;
             display: block;
         }
-        .vc-left-text-right-image img[src=""] {
+        .vc-left-text-right-image img.preview[src=""] {
             display: none;
         }
     </style>

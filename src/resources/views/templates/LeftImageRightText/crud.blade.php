@@ -2,10 +2,11 @@
     <input type="hidden" class="content">
 
     <div class="float-left">
-        <input class="left_image_url" type="hidden" rel="left_image">
+        <!--<input class="left_image_url" type="hidden" rel="left_image">-->
         <div class="left_image">
-            <img src>
-            <input type="file">
+            <img class="preview" src>
+            @include('visualcomposer::vc-browse', ['field'=>['name' => 'left_image_url']])
+            <!--<input type="file">-->
         </div>
     </div>
 
@@ -25,6 +26,7 @@
     <script>
         window['vc_boot', {!!json_encode($template)!!}] = function ($row, content)
         {
+
             var $hiddenInput = $(".content[type=hidden]", $row);
             var fields = [
                 'left_image_url',
@@ -63,48 +65,36 @@
                 on: {change: update}
             });
 
+
+            let $preview = $('img.preview', $row);
+            let $file = $('.left_image_url', $row);
+
             // Setup picture uploader
-            $('.left_image_url', $row).each(function () {
-                var $field = $(this),
-                    $uploader = $('.'+$field.attr('rel'), $row),
-                    $preview = $('img', $uploader),
-                    $file = $('[type="file"]', $uploader);
-                $preview.attr('src', $field.val());
-                $file.change(function (e) {
-                    e.preventDefault();
-                    files = e.target.files;
-                    if (!files.length) return;
-                    var data = new FormData();
-                    data.append('file', files[0]);
-                    $.ajax({
-                        url: @json(route('visualcomposer.fileupload')),
-                        type: 'POST',
-                        data: data,
-                        cache: false,
-                        dataType: 'json',
-                        processData: false,
-                        contentType: false,
-                        success: function(data) {
-                            if(data.error !== false) {
-                                return alert('Upload error');
-                            }
-                            $preview.attr('src', data.url);
-                            $field.val(data.url);
-                            update();
-                        },
-                        error: function() {
-                            alert('Connection error');
-                        }
-                    });
-                });
+            let updatePreview = function(){
+                let src = $file.val();
+
+                if(src.charAt(0) !== '/') 
+                    src = '/'+src;
+
+                $preview.attr('src', src);
+            };
+
+            $file.on('change', function(){
+                updatePreview();
+                update();
             });
 
+            updatePreview();
+                        
+
             // Update hidden field on change
+            
             $row.on(
                 'change blur keyup',
                 'input, textarea, select',
                 update
             );
+            
 
             // Initialize hidden form input in case we submit with no change
             update();
@@ -130,14 +120,14 @@
             width: 49%;
             float: left;
         }
-        .vc-left-image-right-text img {
+        .vc-left-image-right-text img.preview {
             width: 100%;
             height: 450px;
             object-fit: contain;
             margin: auto;
             display: block;
         }
-        .vc-left-image-right-text img[src=""] {
+        .vc-left-image-right-text img.preview[src=""] {
             display: none;
         }
     </style>

@@ -185,6 +185,7 @@
 
             function addRow(template, content, order)
             {
+
                 if (window['vc_boot', template] === undefined) {
                     console.log('Template isn’t supported: '+template);
                     return;
