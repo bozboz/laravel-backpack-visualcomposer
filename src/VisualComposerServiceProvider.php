@@ -14,16 +14,16 @@ class VisualComposerServiceProvider extends LaravelServiceProvider
      */
     public function boot()
     {
-        $this->publishes([__DIR__.'/config' => config_path()], 'config');
+        $this->publishes([__DIR__.'/../config' => config_path()], 'config');
 
-        $this->loadTranslationsFrom(__DIR__.'/resources/lang', 'visualcomposer');
-        $this->publishes([__DIR__.'/resources/lang' => resource_path('lang/vendor/visualcomposer')], 'lang');
+        $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'visualcomposer');
+        $this->publishes([__DIR__.'/../resources/lang' => resource_path('lang/vendor/visualcomposer')], 'lang');
 
-        $this->loadViewsFrom(__DIR__.'/resources/views', 'visualcomposer');
-        $this->publishes([__DIR__.'/resources/views' => resource_path('views/vendor/visualcomposer')], 'views');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'visualcomposer');
+        $this->publishes([__DIR__.'/../resources/views' => resource_path('views/vendor/visualcomposer')], 'views');
 
-        $this->loadMigrationsFrom(__DIR__.'/database/migrations');
-        $this->publishes([__DIR__.'/database/migrations' => database_path('migrations')], 'migrations');
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        $this->publishes([__DIR__.'/../database/migrations' => database_path('migrations')], 'migrations');
     }
 
     /**
@@ -34,12 +34,12 @@ class VisualComposerServiceProvider extends LaravelServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(
-            __DIR__.'/config/visualcomposer.php',
+            __DIR__.'/../config/visualcomposer.php',
             'visualcomposer'
         );
 
         $this->loadRoutesFrom(
-            __DIR__.'/routes/visualcomposer.php'
+            __DIR__.'/../routes/visualcomposer.php'
         );
     }
 }
