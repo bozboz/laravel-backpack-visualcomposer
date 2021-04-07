@@ -6,17 +6,17 @@ return [
 
     // Installed and available templates to show in crud
     'templates' => [
-        \Bozboz\Backpack\VisualComposer\Templates\ImageInBase64::class,
-        \Bozboz\Backpack\VisualComposer\Templates\Article::class,
-        \Bozboz\Backpack\VisualComposer\Templates\LeftTextRightQuote::class,
-        \Bozboz\Backpack\VisualComposer\Templates\LeftImageRightText::class,
-        \Bozboz\Backpack\VisualComposer\Templates\LeftTextRightImage::class,
-        \Bozboz\Backpack\VisualComposer\Templates\ImageInContainer::class,
-        \Bozboz\Backpack\VisualComposer\Templates\BackgroundImageAndText::class,
-        \Bozboz\Backpack\VisualComposer\Templates\TwoColumnsImageTextCta::class,
-        \Bozboz\Backpack\VisualComposer\Templates\ThreecolumnsImageTextCta::class,
-        \Bozboz\Backpack\VisualComposer\Templates\Slideshow::class,
-        \Bozboz\Backpack\VisualComposer\Templates\Minimal::class,
+        \Bozboz\LaravelBackpackVisualcomposer\Templates\ImageInBase64::class,
+        \Bozboz\LaravelBackpackVisualcomposer\Templates\Article::class,
+        \Bozboz\LaravelBackpackVisualcomposer\Templates\LeftTextRightQuote::class,
+        \Bozboz\LaravelBackpackVisualcomposer\Templates\LeftImageRightText::class,
+        \Bozboz\LaravelBackpackVisualcomposer\Templates\LeftTextRightImage::class,
+        \Bozboz\LaravelBackpackVisualcomposer\Templates\ImageInContainer::class,
+        \Bozboz\LaravelBackpackVisualcomposer\Templates\BackgroundImageAndText::class,
+        \Bozboz\LaravelBackpackVisualcomposer\Templates\TwoColumnsImageTextCta::class,
+        \Bozboz\LaravelBackpackVisualcomposer\Templates\ThreecolumnsImageTextCta::class,
+        \Bozboz\LaravelBackpackVisualcomposer\Templates\Slideshow::class,
+        \Bozboz\LaravelBackpackVisualcomposer\Templates\Minimal::class,
     ],
 
     // Available color codes used by some templates

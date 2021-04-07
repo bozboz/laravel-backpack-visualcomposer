@@ -1,8 +1,8 @@
 <?php
 
-namespace Bozboz\Backpack\VisualComposer\Templates;
+namespace Bozboz\LaravelBackpackVisualcomposer\Templates;
 
-use Bozboz\Backpack\VisualComposer\Models\VisualComposerRow;
+use Bozboz\LaravelBackpackVisualcomposer\Models\VisualComposerRow;
 
 abstract class RowTemplateAbstract
 {

@@ -1,11 +1,11 @@
 <?php
 
-namespace Bozboz\Backpack\VisualComposer\Traits;
+namespace Bozboz\LaravelBackpackVisualcomposer\Traits;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
-use Bozboz\Backpack\VisualComposer\Models\VisualComposerRow;
+use Bozboz\LaravelBackpackVisualcomposer\Models\VisualComposerRow;
 
 /**
  * Trait VisualComposer

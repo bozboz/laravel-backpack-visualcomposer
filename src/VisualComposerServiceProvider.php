@@ -1,6 +1,6 @@
 <?php
 
-namespace Bozboz\Backpack\VisualComposer;
+namespace Bozboz\LaravelBackpackVisualcomposer;
 
 use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Bozboz\Backpack\VisualComposer\Templates;
+namespace Bozboz\LaravelBackpackVisualcomposer\Templates;
 
 class Article extends RowTemplateAbstract
 {

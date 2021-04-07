@@ -2,7 +2,7 @@
     "name": "bozboz/laravel-backpack-visualcomposer",
     "description": "This packages provides an interface to manage page content easily",
     "keywords": [
-        "Novius",
+        "Bozboz",
         "Laravel",
         "Backpack",
         "CRUD"
@@ -12,7 +12,7 @@
     "license": "AGPL-3.0",
     "authors": [
         {
-            "name": "Novius Agency",
+            "name": "Bozboz Agency",
             "email": "team-developpeurs@novius.com",
             "homepage": "http://novius.com"
         }
@@ -23,13 +23,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Bozboz\\Backpack\\VisualComposer\\": "src"
+            "Bozboz\\LaravelBackpackVisualcomposer\\": "src"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Bozboz\\Backpack\\VisualComposer\\VisualComposerServiceProvider"
+                "Bozboz\\LaravelBackpackVisualcomposer\\VisualComposerServiceProvider"
             ]
         }
     },

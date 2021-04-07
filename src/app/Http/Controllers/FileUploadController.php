@@ -1,6 +1,6 @@
 <?php
 
-namespace Bozboz\Backpack\VisualComposer\Http\Controllers;
+namespace Bozboz\LaravelBackpackVisualcomposer\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
