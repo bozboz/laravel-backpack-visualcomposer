@@ -1,8 +1,8 @@
 <?php
 
-namespace Novius\Backpack\VisualComposer\Templates;
+namespace Bozboz\Backpack\VisualComposer\Templates;
 
-use Novius\Backpack\VisualComposer\Models\VisualComposerRow;
+use Bozboz\Backpack\VisualComposer\Models\VisualComposerRow;
 
 abstract class RowTemplateAbstract
 {

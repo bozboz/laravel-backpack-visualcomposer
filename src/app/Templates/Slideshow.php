@@ -1,6 +1,6 @@
 <?php
 
-namespace Novius\Backpack\VisualComposer\Templates;
+namespace Bozboz\Backpack\VisualComposer\Templates;
 
 class Slideshow extends RowTemplateAbstract
 {

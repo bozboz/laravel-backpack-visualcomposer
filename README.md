@@ -24,7 +24,7 @@ Ensure the following is added to your composer.json
 Then add this to `config/app.php`:
 
 ```php
-Novius\Backpack\VisualComposer\VisualComposerServiceProvider::class,
+Bozboz\Backpack\VisualComposer\VisualComposerServiceProvider::class,
 ```
 
 Finally, run:
@@ -38,7 +38,7 @@ php artisan migrate
 In the model:
 
 ```php
-use \Novius\Backpack\VisualComposer\Traits\VisualComposer;
+use \Bozboz\Backpack\VisualComposer\Traits\VisualComposer;
 ```
 
 In the crud controller:
@@ -97,7 +97,7 @@ In the model view:
 Run:
 
 ```sh
-php artisan vendor:publish --provider="Novius\Backpack\VisualComposer\VisualComposerServiceProvider"
+php artisan vendor:publish --provider="Bozboz\Backpack\VisualComposer\VisualComposerServiceProvider"
 ```
 
 ...it will output the list of copied files than can now be overwritten, including the config, the backpack field type, the language files and 11 built-in templates:
@@ -119,7 +119,7 @@ Check out how they are made, so you can customize them and build your own.
 
 ## Steps to create a new Template
 
-- Create a class for your template.  This needs to extend `Novius\Backpack\VisualComposer\Templates\RowTemplateAbstract`
+- Create a class for your template.  This needs to extend `Bozboz\Backpack\VisualComposer\Templates\RowTemplateAbstract`
 
 eg.
 
@@ -128,7 +128,7 @@ eg.
 
 namespace App\Templates;
 
-use Novius\Backpack\VisualComposer\Templates\RowTemplateAbstract;
+use Bozboz\Backpack\VisualComposer\Templates\RowTemplateAbstract;
 
 class MyNewRowTemplate extends RowTemplateAbstract
 {

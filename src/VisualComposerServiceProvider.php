@@ -1,6 +1,6 @@
 <?php
 
-namespace Novius\Backpack\VisualComposer;
+namespace Bozboz\Backpack\VisualComposer;
 
 use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
 

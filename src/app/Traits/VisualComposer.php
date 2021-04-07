@@ -1,11 +1,11 @@
 <?php
 
-namespace Novius\Backpack\VisualComposer\Traits;
+namespace Bozboz\Backpack\VisualComposer\Traits;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
-use Novius\Backpack\VisualComposer\Models\VisualComposerRow;
+use Bozboz\Backpack\VisualComposer\Models\VisualComposerRow;
 
 /**
  * Trait VisualComposer

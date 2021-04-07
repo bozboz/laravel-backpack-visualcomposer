@@ -6,17 +6,17 @@ return [
 
     // Installed and available templates to show in crud
     'templates' => [
-        \Novius\Backpack\VisualComposer\Templates\ImageInBase64::class,
-        \Novius\Backpack\VisualComposer\Templates\Article::class,
-        \Novius\Backpack\VisualComposer\Templates\LeftTextRightQuote::class,
-        \Novius\Backpack\VisualComposer\Templates\LeftImageRightText::class,
-        \Novius\Backpack\VisualComposer\Templates\LeftTextRightImage::class,
-        \Novius\Backpack\VisualComposer\Templates\ImageInContainer::class,
-        \Novius\Backpack\VisualComposer\Templates\BackgroundImageAndText::class,
-        \Novius\Backpack\VisualComposer\Templates\TwoColumnsImageTextCta::class,
-        \Novius\Backpack\VisualComposer\Templates\ThreecolumnsImageTextCta::class,
-        \Novius\Backpack\VisualComposer\Templates\Slideshow::class,
-        \Novius\Backpack\VisualComposer\Templates\Minimal::class,
+        \Bozboz\Backpack\VisualComposer\Templates\ImageInBase64::class,
+        \Bozboz\Backpack\VisualComposer\Templates\Article::class,
+        \Bozboz\Backpack\VisualComposer\Templates\LeftTextRightQuote::class,
+        \Bozboz\Backpack\VisualComposer\Templates\LeftImageRightText::class,
+        \Bozboz\Backpack\VisualComposer\Templates\LeftTextRightImage::class,
+        \Bozboz\Backpack\VisualComposer\Templates\ImageInContainer::class,
+        \Bozboz\Backpack\VisualComposer\Templates\BackgroundImageAndText::class,
+        \Bozboz\Backpack\VisualComposer\Templates\TwoColumnsImageTextCta::class,
+        \Bozboz\Backpack\VisualComposer\Templates\ThreecolumnsImageTextCta::class,
+        \Bozboz\Backpack\VisualComposer\Templates\Slideshow::class,
+        \Bozboz\Backpack\VisualComposer\Templates\Minimal::class,
     ],
 
     // Available color codes used by some templates

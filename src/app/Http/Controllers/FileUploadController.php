@@ -1,6 +1,6 @@
 <?php
 
-namespace Novius\Backpack\VisualComposer\Http\Controllers;
+namespace Bozboz\Backpack\VisualComposer\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -29,7 +29,7 @@ class FileUploadController extends Controller
         $path_parts = pathinfo($file->getClientOriginalName());
         $filename = $path_parts['filename'] . ' - ' . time() . '.' . $path_parts['extension'];
         $filename = $file->storeAs('public/', $filename );
-        
+
         $url = Storage::url($filename);
 
         return response()->json([

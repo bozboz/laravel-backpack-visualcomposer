@@ -1,6 +1,6 @@
 <?php
 
-namespace Novius\Backpack\VisualComposer\Models;
+namespace Bozboz\Backpack\VisualComposer\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;

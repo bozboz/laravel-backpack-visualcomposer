@@ -23,13 +23,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Novius\\Backpack\\VisualComposer\\": "src"
+            "Bozboz\\Backpack\\VisualComposer\\": "src"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Novius\\Backpack\\VisualComposer\\VisualComposerServiceProvider"
+                "Bozboz\\Backpack\\VisualComposer\\VisualComposerServiceProvider"
             ]
         }
     },
